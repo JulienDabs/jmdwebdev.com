@@ -1,2 +1,4 @@
 # jmdwebdev.com
-Portfolio
+This is my Portfolio. 
+
+I'll create with React.
