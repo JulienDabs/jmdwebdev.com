@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import MainPage from './Main';
+import LanguageSelector from './LanguageSelector';
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <LanguageSelector />
     </div>
   );
 }
