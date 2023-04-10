@@ -9,7 +9,7 @@
     top: 0;
     right: 0;
     height: 100%;
-    width: 5%;
+    width: 2%;
     background: linear-gradient(to bottom, black, #cc9933);
   }
 
@@ -101,4 +101,9 @@ p {
         margin-right: auto;
         width: 65%;
     }
+}
+
+.dark {
+    background-color: black;
+    color: white;
 }

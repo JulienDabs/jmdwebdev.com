@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../img/JMD Web Dev.png"
 import logoDark from "../../img/JMD Web Dev - dark.png"
 import profile from "../../img/profile_pic.jpg"
-import '../About/about.css'
+import './about.css'
 
 function AboutFr() {
     

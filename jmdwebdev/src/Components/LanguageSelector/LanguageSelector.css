@@ -55,6 +55,16 @@
     border-radius: 10%;
 }
 
+#modes{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+    padding-top: 10px;
+    font-size: larger;
+    z-index: 99;
+}
+
 @media screen and (max-width: 375px) {
     
 .main-page--logo {

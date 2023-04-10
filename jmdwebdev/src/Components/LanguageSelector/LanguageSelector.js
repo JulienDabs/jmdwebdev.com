@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Link, useRouteMatch} from 'react-router-dom';
-import MainPageFr from '../FR/Main/Main';
-import AboutFr from "../FR/About/About"
-import logo from '../img/JMD Web Dev.png'; 
-import '../LanguageSelector/LanguageSelector.css'
+import MainPageFr from '../Main/Main';
+import AboutFr from "../About/About"
+import logo from '../../img/JMD Web Dev - dark.png'; 
+import './LanguageSelector.css'
+
+
 
 class LanguageSelector extends Component {
   constructor(props) {
@@ -57,8 +59,9 @@ class LanguageSelector extends Component {
     return (
       
       <div className={darkMode ? 'dark' : 'light'}>
-       <button className='' onClick={this.handleDarkModeToggle}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
-        <AboutFr />
+        <i className={`fa ${darkMode ? 'fa-sun-o' : 'fa-moon-o'}`} id='modes' onClick={this.handleDarkModeToggle}></i>
+        <MainPageFr />
+        
         
       </div>
       
