@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import LanguageSelector from './LanguageSelector';
+import LanguageSelector from './LanguageSelector/LanguageSelector';
 
 function App() {
   return (

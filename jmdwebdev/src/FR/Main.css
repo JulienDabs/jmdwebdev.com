@@ -1,8 +1,17 @@
 .main_page {
     max-width: 80%;
-    margin: 0 10rem;
+    margin: 0 10rem; 
     
 }
+
+.vertical-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 5%;
+    background: linear-gradient(to bottom, black, #cc9933);
+  }
 
 h1 {
     font-size: 3rem;
@@ -10,11 +19,86 @@ h1 {
 }
 h2 {
     font-size: 2rem;
+    font-family: 'Gruppo', cursive;
+    ;
 }
 p {
     justify-content :space-around;
 }
 
-.maintitle {
-    text-align: center;
+.main_page--footer-rounded {
+    background: linear-gradient(to bottom, #cc9933, black);
+    position: absolute;
+    width: 83%;
+    border-radius: 52%;
+    height: 605px;
+    margin: -144px;
+}
+
+.main-title {
+    display: none;
+}
+
+.main-page-fr--logo{
+    margin-left: -13.5rem;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media screen and (min-width: 320px) {
+    .main_page{
+        max-width: fit-content;
+        margin: 20px;
+    }
+
+    .main-page-fr--logo{
+        margin-left: -2.5rem;
+        margin-right: auto;
+        width: 120%;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .main_page{
+        max-width: fit-content;
+        margin: 10px 30px;
+    }
+
+    .main-page-fr--logo{
+        margin-left: -3.5rem;
+        margin-right: auto;
+        width: 120%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main_page{
+        max-width: fit-content;
+        margin: 10px 60px;
+    }
+
+    .main-page-fr--logo{
+        margin-left: -6.5rem;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .main_page--content{
+        padding-right: 10rem;
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    .main_page{
+        max-width: fit-content;
+        margin: 10px 120px;
+    }
+
+    .main-page-fr--logo{
+        margin-left: -6.5rem;
+        margin-right: auto;
+        width: 65%;
+    }
 }
