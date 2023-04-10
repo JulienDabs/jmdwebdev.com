@@ -57,15 +57,9 @@ class LanguageSelector extends Component {
     return (
       
       <div className={darkMode ? 'dark' : 'light'}>
-        <button onClick={this.handleDarkModeToggle}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
-
-        {language === 'fr' ? (
-         <>
-         <AboutFr />
-       </>
-        ) : (
-          <h1>english</h1>
-        )}
+       <button className='' onClick={this.handleDarkModeToggle}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
+        <AboutFr />
+        
       </div>
       
     );
