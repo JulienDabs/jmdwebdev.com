@@ -3,6 +3,10 @@ import "../Main/Main.css";
 import "../LanguageSelector/LanguageSelector.css"
 import logo from "../../img/JMD Web Dev.png"
 import logoDark from "../../img/JMD Web Dev - dark.png"
+import SCCaro from "../../img/carolinedabadie.fr.jpg"
+import SCClever from "../../img/clevercontrarian.com.jpg"
+import SCDad from "../../img/pierredabadie.fr.jpg"
+import SCToulon from "../../img/toulonmerite.fr.jpg"
 
 function MainPagefr() {
 
@@ -17,15 +21,27 @@ function MainPagefr() {
     <>
       <div className="main_page">
         <div className="vertical-bar"></div>
-        <img src={isDarkMode ? logoDark : logo} className="animate__animated animate__zoomIn main-page-fr--logo" alt="JMD Developpeur Web"/>
-        <h1 className="animate__animated animate__zoomIn main-title">JMD Web Development</h1>
-        <h2 className="maintitle">{intro}</h2><br></br>
-        
+          <img src={isDarkMode ? logoDark : logo} className="animate__animated animate__zoomIn main-page-fr--logo" alt="JMD Developpeur Web"/>
+          <h1 className="animate__animated animate__zoomIn main-title">JMD Web Development</h1>
+          <h2 className="maintitle">{intro}</h2><br></br>
         
           <div className="main_page--content">
-          <p>{presentation}</p>
-          <br></br><p>{presentationNext}</p>
-        </div>
+            <p>{presentation}</p>
+            <br></br><p>{presentationNext}</p>
+          </div>
+
+          <div className="main-page-accomplishment">
+            <h2 id="main-page-second-title">My accomplishements</h2>
+            <ul className="main-page-accomplishments">
+              <li className="main-page-accomplishements-detail"><h4>Caroline Dabadie | Coiffure à Domicile</h4><a href="https://www.carolinedabadie.fr"><img className="main-page-thumbnail" src={SCCaro} alt="Caroline Dabadie | Coiffure à domicile" loading="lazy" lazy="true"/></a><p>Le premier site que j'ai créé en ligne était destiné à ma sœur. Il s'agissait d'une combinaison de langages HTML et CSS, ainsi que du framework Bootstrap pour le design. Cette expérience m'a permis de découvrir les fondamentaux de la création de sites web et m'a donné l'envie de continuer à apprendre et à perfectionner mes compétences dans ce domaine.</p></li>
+
+              <li className="main-page-accomplishements-detail"><h4>The Clever Contrarian | The Daily Kaizen</h4><a href="https://www.clevercontrarian.com"><img className="main-page-thumbnail" src={SCClever} alt="Daily Kaizen" loading="lazy" lazy="true"/></a><p>Le blog que j'ai créé pour un ami a été développé sous WordPress, l'un des CMS les plus populaires au monde. WordPress est doté d'une interface utilisateur intuitive qui facilite la création et la gestion de sites web. J'ai également développé un thème personnalisé pour le blog pour le rendre unique et adapté aux besoins spécifiques de mon ami.</p></li>
+
+              <li className="main-page-accomplishements-detail"><h4>Pierre Dabadie | Artiste Peintre</h4><a href="https://www.pierredabadie.fr"><img className="main-page-thumbnail" src={SCDad} alt="Pierre Dabadie | Artiste peintre" loading="lazy" lazy="true"/></a><p>J'ai également créé un site vitrine pour un artiste peintre en utilisant la librairie React. Cela m'a permis d'explorer davantage le monde des frameworks JavaScript et de créer une expérience utilisateur plus dynamique et interactive pour les visiteurs du site.</p></li> 
+
+              <li className="main-page-accomplishements-detail"><h4>Toulon Mérite un Grand Sporting (ébauche)</h4><a href="https://www.jmdwebdev.com/toulonmerite"><img className="main-page-thumbnail" src={SCToulon} alt="Toulon Mérite un grand Sporting" loading="lazy" lazy="true"/></a><p>Je suis actuellement en train de travailler sur un blog appelé 'Toulon Mérite un Grand Sporting'. Si le site est approuvé, il sera présenté sous WordPress, un CMS populaire pour la création de blogs. J'ai hâte de partager mes avancées avec vous !</p></li>
+            </ul>
+          </div>
       </div>
       
     </>

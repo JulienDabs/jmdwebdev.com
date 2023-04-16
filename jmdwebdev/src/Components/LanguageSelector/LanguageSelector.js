@@ -61,7 +61,7 @@ class LanguageSelector extends Component {
       <div className={darkMode ? 'dark' : 'light'}>
         <i className={`fa ${darkMode ? 'fa-sun-o' : 'fa-moon-o'}`} id='modes' onClick={this.handleDarkModeToggle}></i>
         <MainPageFr />
-        
+      
         <Footer />
       </div>
       
