@@ -1,0 +1,42 @@
+/* .footer-position {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: black;
+    color: white;
+    height: 60px;
+} */
+
+
+.footer-position-title {
+    text-align: center;
+    padding: 1rem;
+    }
+
+.footer-position-title-size{
+    font-size: 1.2rem;
+    padding: 6px;
+    font-weight: 600;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+    color: #cc9933;
+}
+
+a:link,
+.footer-position-icon {
+    color: #cc9933;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.footer-position-icon:hover {
+    transition: background-color 0.5s ease, color 0.5s ease;
+    color: white;
+    
+}

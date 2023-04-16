@@ -1,12 +1,11 @@
 .main-page {
-    margin-top: 25%;
+    margin-top: 5%;
 }
 
 .main-page--personalized-button {
     background: #cc9933;
     border: none;
     color: black; 
-    
     font-size: 1.4rem;
     padding: 0.5rem;
     top: 50%;
@@ -20,9 +19,7 @@
 }
 
 .main-page--personalized-button:hover{
-    
     border-radius: 115% 70%;
-    
     cursor: pointer;
     transition: 50ms;
     color: white;
@@ -41,7 +38,7 @@
 }
 
 .main-page--logo {
-    display: block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5rem;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link, useRouteMatch} from 'react-router-dom';
 import MainPageFr from '../Main/Main';
 import AboutFr from "../About/About"
-import logo from '../../img/JMD Web Dev - dark.png'; 
+import logo from '../../img/JMD Web Dev.png'; 
 import './LanguageSelector.css'
+import Footer from '../Footer/Footer';
 
 
 
@@ -62,7 +62,7 @@ class LanguageSelector extends Component {
         <i className={`fa ${darkMode ? 'fa-sun-o' : 'fa-moon-o'}`} id='modes' onClick={this.handleDarkModeToggle}></i>
         <MainPageFr />
         
-        
+        <Footer />
       </div>
       
     );
