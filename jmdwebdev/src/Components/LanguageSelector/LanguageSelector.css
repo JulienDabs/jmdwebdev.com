@@ -12,6 +12,7 @@
     left: 50%;
     margin: 10px 7%;
     border-radius: 70% 115%;
+    
     transition: background-color 0.5s ease, color 0.5s ease;
     transition: border-radius 0.5s ease, color 0.5s ease;
     font-family: 'Gruppo', cursive;
@@ -23,6 +24,7 @@
     cursor: pointer;
     transition: 50ms;
     color: white;
+    
     transition: background-color 0.5s ease, color 0.5s ease;
     transition: border-radius 0.5s ease, color 0.5s ease;
     
@@ -56,14 +58,16 @@
     position: relative;
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 20px;
+    margin-right: 91px;
     padding-top: 10px;
     font-size: larger;
     z-index: 99;
 }
 
-@media screen and (max-width: 375px) {
-    
+@media screen and (min-width: 320px) {
+    #modes {
+        margin-right: 10px;
+    }
 .main-page--logo {
     display: block;
     margin-left: auto;
@@ -74,26 +78,126 @@
 }
 
 .main-page--personalized-button {
-    background: rgb(0, 0, 0);
-    color: #cc9933; 
+    background: #cc9933;
+    color: #000000; 
     border: none;
-    font-size: 1.2rem;
-    padding: 0.5rem;
+    font-size: 2.2rem;
+    padding: 1.5rem;
     top: 50%;
     left: 50%;
-    margin: 10px 7%;
+    margin: 25px 7%;
     border-radius: 70% 115%;
     
 }
 .main-page--buttons {
   display: flex;
   flex-direction: column;
-  float: left;
-  left: 37%;
-  
   
     
 }
 
-
 }
+
+@media screen and (min-width : 475px) {
+    #modes {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width : 768px) {
+    #modes {
+        margin-right: 30px;
+        size: 10px;
+    }
+
+    .main-page--personalized-button {
+        background: #cc9933;
+        border: none;
+        color: black; 
+        font-size: 1.4rem;
+        padding: 0.5rem;
+        top: 50%;
+        left: 50%;
+        margin: 10px 7%;
+        border-radius: 70% 115%;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        transition: border-radius 0.5s ease, color 0.5s ease;
+        font-family: 'Gruppo', cursive;
+        font-weight: bold;
+    }
+    
+    .main-page--personalized-button:hover{
+        border-radius: 115% 70%;
+        cursor: pointer;
+        transition: 50ms;
+        color: white;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        transition: border-radius 0.5s ease, color 0.5s ease;
+        
+    }
+    
+    .main-page--buttons {
+      position:relative;
+      display: flex;
+      flex-direction: row;
+      
+        
+    }
+    
+    .main-page--logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5rem;
+      margin-bottom: 3rem;
+      width: 70%;
+    }
+    
+    .main-page--footer-block {
+        background: black;
+        background: linear-gradient(90deg, rgba(0,0,0,1) 54%, rgba(204,153,51,1) 100%);
+        border-radius: 10%;
+    }
+}
+
+@media screen and (min-width : 1440px) {
+    #modes {
+        margin-right: 60px; 
+    }
+    .main-page--personalized-button {
+        background: #cc9933;
+        border: none;
+        color: black; 
+        font-size: 2.4rem;
+        padding: 1.0rem;
+        top: 50%;
+        left: 50%;
+        margin: 10px 7%;
+        border-radius: 70% 115%;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        transition: border-radius 0.5s ease, color 0.5s ease;
+        font-family: 'Gruppo', cursive;
+        font-weight: bold;
+    }
+    
+    .main-page--personalized-button:hover{
+        border-radius: 115% 70%;
+        cursor: pointer;
+        transition: 50ms;
+        color: white;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        transition: border-radius 0.5s ease, color 0.5s ease;
+        
+    }
+}
+
+@media screen and (min-width : 1440px) {
+    #modes {
+        margin-right: 60px;
+    }
+}
+
+@keyframes myAnimation {
+    from { transform: scale(1); }
+    to { transform: scale(1.5); }
+  }
