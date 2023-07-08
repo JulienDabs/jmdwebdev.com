@@ -27,26 +27,26 @@
     .about-logo{
         margin-left: -0.5rem;
         margin-right: auto;
-        width: 90%;
+        width: 100%;
         
     }
     .about-title {
         font-size: large;
         text-align: center;
         float: left;
-        padding: 1rem 0px;
-        width: 81%;
+        padding: 1rem 23px;
+        width: 85%;
     }
 
     .about-picture-profile{
-        width: 64%;
+        width: 78%;
         margin: auto 36px;
         background-color: black;
     }
     
     .about-bio {
         
-        width: 69%;
+        width: 86%;
         margin: 1px;
         
     }
@@ -59,17 +59,17 @@
         text-align: center;
         padding: 1rem 13px;
         float: left;
-        width: 80%;
+        width: 92%;
         
     }
     .about-logo{
        margin-left: -0.5rem; 
        margin-right: auto;
-       width: 93%;
+       width: 100%;
         
     }
     .about-bio { 
-        width: 77%;
+        width: 88%;
   }
   .about-picture-profile{
         margin: auto 44px;
@@ -87,7 +87,7 @@
     }
 
     .about-bio {
-        width: 78%;
+        width: 89%;
     }
     .about-picture-profile{
         margin: auto 49px;
@@ -113,7 +113,7 @@
       }
 
     .about-bio {
-        padding: 20px;
+        padding: 20px 49px;
         text-align: justify;
         line-height: 26px;
         width: 48%;
@@ -145,7 +145,7 @@
 
     .about-logo {
         margin-right: auto;
-        width: 45%;
+        width: 68%;
     }
     
     .about-title {
@@ -156,7 +156,7 @@
     }
 
     .about-bio {
-        padding: 20px;
+        padding: 20px 22px 29px 78px;
         text-align: justify;
         line-height: 26px;
         width: 51%;
@@ -164,7 +164,7 @@
     
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1439px) {
     
 
     .about-logo{  
@@ -176,7 +176,12 @@
         margin-top: 2.1rem;
         margin-left: 3rem;
     }
-
+    .about-bio {
+        padding: 20px 22px 29px 166px;
+        text-align: justify;
+        line-height: 26px;
+        width: 51%;
+    }
     .about-title {
         text-align: center;
         margin-right: 164px;
@@ -194,7 +199,7 @@
     }
 
     .about-bio {
-        padding: 20px;
+        padding: 135px;
         text-align: justify;
         line-height: 26px;
         width: 67%;

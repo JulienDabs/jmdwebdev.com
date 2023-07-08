@@ -110,6 +110,8 @@ p {
     }
   }
 
+  
+
 @media screen and (min-width: 320px) {
     .main_page{
         max-width: fit-content;
