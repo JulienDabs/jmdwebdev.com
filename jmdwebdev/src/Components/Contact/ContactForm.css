@@ -1,0 +1,224 @@
+.about-intro {
+    display: flex;
+}
+.about-logo {
+    margin-right: auto;
+    width: 30%;
+    
+}
+
+.about-title {
+    float: right;
+    font-weight: bold;
+    font-family: 'Gruppo', cursive;
+}
+
+.about-bio {
+    padding: 20px;
+    text-align: justify;
+    line-height: 20px;
+}
+
+@media screen and (min-width: 320px) {
+    .about-intro {
+        display: inline;
+    }
+
+    .about-logo{
+        margin-left: -0.5rem;
+        margin-right: auto;
+        width: 100%;
+        
+    }
+    .about-title {
+        font-size: large;
+        text-align: center;
+        float: left;
+        padding: 1rem 23px;
+        width: 85%;
+    }
+
+    .about-picture-profile{
+        width: 78%;
+        margin: auto 36px;
+        background-color: black;
+    }
+    
+    .about-bio {
+        
+        width: 86%;
+        margin: 1px;
+        
+    }
+}
+
+
+@media screen and (min-width: 375px) {
+ 
+    .about-title {
+        text-align: center;
+        padding: 1rem 13px;
+        float: left;
+        width: 92%;
+        
+    }
+    .about-logo{
+       margin-left: -0.5rem; 
+       margin-right: auto;
+       width: 100%;
+        
+    }
+    .about-bio { 
+        width: 88%;
+  }
+  .about-picture-profile{
+        margin: auto 44px;
+    }
+}
+    
+
+@media screen and (min-width: 425px) {
+ 
+    .about-title {
+        text-align: center;
+        float: left;
+        margin-left: 15px;
+        padding: 1rem 13px;        
+    }
+
+    .about-bio {
+        width: 89%;
+    }
+    .about-picture-profile{
+        margin: auto 49px;
+    }
+   
+}
+
+@media screen and (min-width: 768px) {
+    
+   
+    .about-title {
+        text-align: center;       
+        margin-right: 85px;
+        font-size:xx-large;
+        width: 40%;
+        
+    }
+
+    .about-intro {
+        display: flex;
+        align-items: center;
+        
+      }
+
+    .about-bio {
+        padding: 20px 49px;
+        text-align: justify;
+        line-height: 26px;
+        width: 48%;
+        
+    }
+
+    .about-logo{
+        /* margin-left: -6.5rem; */
+        margin-right: auto;
+        width: 47%;
+        
+    }
+
+    .about-picture-profile{
+        
+        width: 30%;
+        margin-top: 2.1rem;
+        margin-left: 0rem;
+
+        
+    }
+
+    .about-biopic {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .about-logo {
+        margin-right: auto;
+        width: 68%;
+    }
+    
+    .about-title {
+        text-align: center;
+        margin-right: 133px;
+        font-size: xx-large;
+        width: 39%;
+    }
+
+    .about-bio {
+        padding: 20px 22px 29px 78px;
+        text-align: justify;
+        line-height: 26px;
+        width: 51%;
+    }
+    
+}
+
+@media screen and (min-width: 1439px) {
+    
+
+    .about-logo{  
+        margin-right: auto;
+    }
+
+    .about-picture-profile {
+        width: 25%;
+        margin-top: 2.1rem;
+        margin-left: 3rem;
+    }
+    .about-bio {
+        padding: 20px 22px 29px 166px;
+        text-align: justify;
+        line-height: 26px;
+        width: 51%;
+    }
+    .about-title {
+        text-align: center;
+        margin-right: 164px;
+        font-size: xx-large;
+        width: 44%;
+    }
+}
+
+@media screen and (min-width: 2559px) {
+
+    .about-picture-profile {
+        width: 15%;
+        margin-top: 2.1rem;
+        margin-left: 2rem;
+    }
+
+    .about-bio {
+        padding: 135px;
+        text-align: justify;
+        line-height: 26px;
+        width: 67%;
+    }
+
+    .about-logo {
+        width: 43%;
+    }
+    
+}
+
+ 
+.dark {
+	background: rgb(204,153,51);
+    background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(204,153,51,1) 100%);
+    color: white;
+}
+
+.light {
+	background: rgb(204,153,51);
+	background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(204,153,51,0) 3%, rgba(204,153,51,0) 97%, rgba(204,153,51,1) 100%);
+}

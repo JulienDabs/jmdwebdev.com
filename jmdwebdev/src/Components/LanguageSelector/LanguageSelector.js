@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainPageFr from '../Main/Main';
-import AboutFr from "../About/About"
+import AboutFr from "../About/About";
+import ContactForm from '../Contact/ContactForm';
 import logo from '../../img/JMD Web Dev.png'; 
 import './LanguageSelector.css'
 import Footer from '../Footer/Footer';
@@ -60,7 +61,7 @@ class LanguageSelector extends Component {
       
       <div className={darkMode ? 'dark' : 'light'}>
         <i className={`fa ${darkMode ? 'fa-sun-o' : 'fa-moon-o'}`} id='modes' onClick={this.handleDarkModeToggle}></i>
-        <AboutFr />
+        <ContactForm />
       
         <Footer />
       </div>
