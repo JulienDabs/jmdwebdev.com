@@ -1,213 +1,220 @@
-.about-intro {
-    display: flex;
+.contact_form {
+   width: 50%;
 }
-.about-logo {
-    margin-right: auto;
-    width: 30%;
+
+.contact_form_names {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    padding-left: 1.5rem;
     
 }
 
-.about-title {
-    float: right;
-    font-weight: bold;
-    font-family: 'Gruppo', cursive;
+.contact_form_lastName {
+    padding-top: 1rem;
+    /* width: 50%; */
 }
 
-.about-bio {
-    padding: 20px;
+.contact_form_firstName {
+    padding-top: 1rem;
+    /* width: 50%; */
+    
+}
+
+.contact_form_email {
+    padding-top: 1rem;
+    padding-left: 9rem;
+}
+
+.contact_form_message{
+    padding-top: 1rem;
+    padding-left: 9rem;
+    
+}
+
+.contact_logo {
+    width: 100%;    
+}
+
+.contact_title {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact_intro {
     text-align: justify;
-    line-height: 20px;
+    margin: 0 0rem;
+    line-height: 1.7rem;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.contact_from_submit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(204,153,51);
+  text-decoration: none;
+  font-size: 2em;
+  display: inline-block;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  padding: 0.5em 2em;
+  border: 2px solid rgb(204,153,51);
+  transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  background: none;
+}
+.contact_from_submit::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: rgb(204,153,51);
+  transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+  z-index: -1;
+}
+.contact_from_submit::after {
+  content: "";
+  display: inline-block;
+  background-image: url("https://cdn-icons-png.flaticon.com/128/109/109617.png");
+  position: absolute;
+  top: 0;
+  left: calc(100% - 3em);
+  right: 3em;
+  bottom: 0;
+  background-size: 1.5em;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+}
+.contact_from_submit:hover {
+  padding: 0.5em 3.5em 0.5em 0.5em;
+}
+.contact_from_submit:hover::before {
+  left: calc(100% - 3em);
+  right: 0;
+  transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+}
+.contact_from_submit:hover::after {
+  right: 0;
+  transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
 }
 
 @media screen and (min-width: 320px) {
-    .about-intro {
-        display: inline;
-    }
+   
+    .contact_intro {
+        text-align: justify;
+        margin: 0 1.3rem;
+        line-height: 1.7rem;}
 
-    .about-logo{
-        margin-left: -0.5rem;
-        margin-right: auto;
-        width: 100%;
-        
-    }
-    .about-title {
-        font-size: large;
-        text-align: center;
-        float: left;
-        padding: 1rem 23px;
-        width: 85%;
-    }
-
-    .about-picture-profile{
-        width: 78%;
-        margin: auto 36px;
-        background-color: black;
-    }
-    
-    .about-bio {
-        
-        width: 86%;
-        margin: 1px;
-        
+    .contact_title {
+        margin: 1rem;
+        display: flex;
+        justify-content: center;
     }
 }
 
 
 @media screen and (min-width: 375px) {
  
-    .about-title {
-        text-align: center;
-        padding: 1rem 13px;
-        float: left;
-        width: 92%;
-        
-    }
-    .about-logo{
-       margin-left: -0.5rem; 
-       margin-right: auto;
-       width: 100%;
-        
-    }
-    .about-bio { 
-        width: 88%;
-  }
-  .about-picture-profile{
-        margin: auto 44px;
-    }
+    .contact_intro {
+        text-align: justify;
+        margin: 0 1.4rem;
+        line-height: 1.7rem;}
 }
     
 
 @media screen and (min-width: 425px) {
  
-    .about-title {
-        text-align: center;
-        float: left;
-        margin-left: 15px;
-        padding: 1rem 13px;        
-    }
+    .contact_intro {
+        text-align: justify;
+        margin: 0 2rem;
+        line-height: 1.7rem;}
 
-    .about-bio {
-        width: 89%;
-    }
-    .about-picture-profile{
-        margin: auto 49px;
-    }
+    
    
 }
 
 @media screen and (min-width: 768px) {
     
-   
-    .about-title {
-        text-align: center;       
-        margin-right: 85px;
-        font-size:xx-large;
-        width: 40%;
-        
-    }
-
-    .about-intro {
-        display: flex;
-        align-items: center;
-        
-      }
-
-    .about-bio {
-        padding: 20px 49px;
+    .contact_intro {
         text-align: justify;
-        line-height: 26px;
-        width: 48%;
+        margin: 0 4rem;
+        line-height: 1.7rem;}
+    
         
-    }
-
-    .about-logo{
-        /* margin-left: -6.5rem; */
-        margin-right: auto;
-        width: 47%;
-        
-    }
-
-    .about-picture-profile{
-        
-        width: 30%;
-        margin-top: 2.1rem;
-        margin-left: 0rem;
-
-        
-    }
-
-    .about-biopic {
-        display: flex;
-    }
+   
 }
 
 @media screen and (min-width: 1024px){
 
-    .about-logo {
-        margin-right: auto;
-        width: 68%;
-    }
-    
-    .about-title {
-        text-align: center;
-        margin-right: 133px;
-        font-size: xx-large;
-        width: 39%;
+    .contact_intro {
+        text-align: justify;
+        margin: 0 5rem;
+        line-height: 1.7rem;
     }
 
-    .about-bio {
-        padding: 20px 22px 29px 78px;
-        text-align: justify;
-        line-height: 26px;
-        width: 51%;
+    .contact_title {
+        margin: 1rem 6rem;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 3.5rem
+    }
+
+    .contact_logo {
+        width: 75%;
+        
     }
     
 }
 
 @media screen and (min-width: 1439px) {
     
-
-    .about-logo{  
-        margin-right: auto;
+    .contact_title {
+        margin: 1rem 9rem;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 3.5rem
     }
 
-    .about-picture-profile {
-        width: 25%;
-        margin-top: 2.1rem;
-        margin-left: 3rem;
-    }
-    .about-bio {
-        padding: 20px 22px 29px 166px;
+    .contact_intro {
         text-align: justify;
-        line-height: 26px;
-        width: 51%;
+        margin: 0 9rem;
+        line-height: 1.7rem;}
+    
+    .contact_logo {
+        width: 54%;
+        
     }
-    .about-title {
-        text-align: center;
-        margin-right: 164px;
-        font-size: xx-large;
-        width: 44%;
-    }
+        
+    
 }
 
 @media screen and (min-width: 2559px) {
-
-    .about-picture-profile {
-        width: 15%;
-        margin-top: 2.1rem;
-        margin-left: 2rem;
-    }
-
-    .about-bio {
-        padding: 135px;
+    
+    .contact_intro {
         text-align: justify;
-        line-height: 26px;
-        width: 67%;
+        margin: 0 12rem;
+        line-height: 1.7rem;}
+    
+    .contact_title {
+        margin: 1rem 12rem;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 3.5rem
     }
 
-    .about-logo {
-        width: 43%;
+    .contact_logo {
+        width: 50%;
+        
     }
+  
     
 }
 

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import logo from "../../img/JMD Web Dev.png"
 import logoDark from "../../img/JMD Web Dev - dark.png"
+import "../Contact/ContactForm.css"
 import "../LanguageSelector/LanguageSelector.css"
 
 
 function ContactForm() {
-  const [name, setName] = useState("");
+  const [lastName, setLastname] = useState("");
+  const [firstName, setFirstname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -14,14 +16,15 @@ function ContactForm() {
 
     // Compose the email
     const to = "contact@jmdwebdev.com";
-    const subject = "New contact form submission";
-    const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+    const subject = "Nouveau message de JMDWebdev.com !";
+    const body = `Lastname: ${lastName}\nFirstname: ${firstName}\nEmail: ${email}\nMessage: ${message}`;
 
     // Send the email (using your preferred method or library)
     // For example, you can use the `fetch` API to send a POST request to a server-side endpoint that handles the email sending.
 
     // Clear the form fields
-    setName("");
+    setLastname("");
+    setFirstname("");
     setEmail("");
     setMessage("");
 
@@ -33,10 +36,12 @@ function ContactForm() {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     const language = localStorage.getItem('language') || 'en';
     const title = language === 'fr' ? "Me contacter" : "Contact Me";
-    const customerName = language === 'fr' ? "Nom" : "Name"; 
+    const lastNameCustomer = language === 'fr' ? "Nom de famille" : "Lastname"; 
+    const firstNameCustomer = language === 'fr' ? "Prénom" : "Firstname";
     const mail = language === 'fr' ? "Couriel" : "Email"; 
     const submit = language === 'fr' ? "Envoyer" : "Submit"; 
     const intro = language === 'fr' ? "Vous aspirez à concrétiser votre projet en ligne avec succès ? Je suis là pour vous aider ! Que vous soyez une entreprise en pleine expansion, un entrepreneur passionné ou simplement une personne désireuse de créer une présence web percutante, je suis enchanté de vous proposer une évaluation gratuite de votre projet web. N'hésitez pas à me contacter dès maintenant en utilisant le formulaire ci-dessous. Fournissez-moi quelques détails sur votre projet, vos coordonnées et vos disponibilités, et je vous recontacterai rapidement pour organiser une consultation gratuite. Ensemble, nous pourrons explorer les possibilités qui s'offrent à vous et commencer à réaliser votre projet web dès aujourd'hui." : "Are you eager to successfully bring your online project to life? I'm here to assist you! Whether you're a rapidly growing company, a passionate entrepreneur, or simply someone looking to create a powerful web presence, I'm delighted to offer you a free evaluation of your web project. Feel free to contact me now using the form below. Provide me with some details about your project, your contact information, and your availability, and I will get back to you promptly to arrange a free consultation. Together, we can explore the possibilities available to you and start working on your web project today.";
+    const placeholderMessage = language ==='fr' ? "Je souhaiterais vous contacter pour mon projet..." : "I would like to contact about my project..."
 
   return (
 
@@ -47,35 +52,64 @@ function ContactForm() {
           <h2 className="contact_title">{title}</h2><br></br>
 
           <p className="contact_intro">{intro}</p>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">{customerName}:</label>
-      <input
-        type="text"
-        id="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
+    
+    
+    <div className="contact_form">
+      <form onSubmit={handleSubmit} >
+        <div className="contact_form_names">
+          <div className="contact_form_lastName">
+            <label htmlFor="lastName">{lastNameCustomer}:</label><br></br>
+            <input
+              type="text"
+              id="name"
+              value={lastName}
+              placeholder="Doe"
+              onChange={(e) => setLastname(e.target.value)}
+              required
+            />
+          </div>
 
-      <label htmlFor="email">{mail}:</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
+          <div className="contact_form_firstName">
+            <label htmlFor="firstName">{firstNameCustomer}:</label><br></br>
+            <input
+              type="text"
+              id="name"
+              value={firstName}
+              placeholder="John"
+              onChange={(e) => setFirstname(e.target.value)}
+              required
+            />
+          </div>
+        </div>
 
-      <label htmlFor="message">Message:</label>
-      <textarea
-        id="message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        required
-      ></textarea>
+        <div className="contact_form_email">
+          <label htmlFor="email">{mail}:</label><br></br>
+          <input
+            type="email"
+            id="email"
+            placeholder="john.doe@host.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
 
-      <button type="submit">{submit}</button>
-    </form>
+        <div className="contact_form_message">
+          <label htmlFor="message">Message:</label><br></br>
+          <textarea
+            id="message"
+            value={message}
+            placeholder={placeholderMessage}
+            rows="20"
+            cols="64"
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" className="contact_from_submit">{submit}</button>
+      </form>
+    </div>
     </>
   );
 }
