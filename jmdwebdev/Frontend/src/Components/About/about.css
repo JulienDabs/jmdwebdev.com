@@ -1,0 +1,135 @@
+.contact_logo {
+    width: 100%;
+    
+}
+
+.contact_title {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact_intro {
+    text-align: justify;
+    margin: 0 0rem;
+    line-height: 1.7rem;
+}
+
+@media screen and (min-width: 320px) {
+   
+    .contact_intro {
+        text-align: justify;
+        margin: 0 1rem;
+        line-height: 1.7rem;}
+
+    .contact_title {
+        margin: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (min-width: 375px) {
+ 
+    .contact_intro {
+        text-align: justify;
+        margin: 0 1rem;
+        line-height: 1.7rem;}
+}
+    
+
+@media screen and (min-width: 425px) {
+ 
+    .contact_intro {
+        text-align: justify;
+        margin: 0 2rem;
+        line-height: 1.7rem;}
+
+    
+   
+}
+
+@media screen and (min-width: 768px) {
+    
+    .contact_intro {
+        text-align: justify;
+        margin: 0 4rem;
+        line-height: 1.7rem;}
+    
+        
+   
+}
+
+@media screen and (min-width: 1024px){
+
+    .contact_intro {
+        text-align: justify;
+        margin: 0 5rem;
+        line-height: 1.7rem;
+    }
+
+    .contact_title {
+        margin: 1rem 6rem;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 3.5rem
+    }
+
+    .contact_logo {
+        width: 70%;
+        
+    }
+    
+}
+
+@media screen and (min-width: 1439px) {
+    
+    .contact_title {
+        margin: 1rem 9rem;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 3.5rem
+    }
+
+    .contact_intro {
+        text-align: justify;
+        margin: 0 9rem;
+        line-height: 1.7rem;}
+    
+    .contact_logo {
+        width: 54%;
+        
+    }
+        
+    
+}
+
+@media screen and (min-width: 2559px) {
+    
+    .contact_intro {
+        text-align: justify;
+        margin: 0 12rem;
+        line-height: 1.7rem;}
+    
+    .contact_title {
+        margin: 1rem 12rem;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 3.5rem
+    }
+  
+    
+}
+
+ 
+.dark {
+	background: rgb(204,153,51);
+    background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(204,153,51,1) 100%);
+    color: white;
+}
+
+.light {
+	background: rgb(204,153,51);
+	background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(204,153,51,0) 3%, rgba(204,153,51,0) 97%, rgba(204,153,51,1) 100%);
+}
