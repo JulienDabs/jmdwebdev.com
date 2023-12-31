@@ -1,231 +1,205 @@
+/* General Styles for Contact Form */
 .contact_form {
-   width: 50%;
+    width: 50%;
+    margin: auto; /* Center the form */
 }
 
 .contact_form_names {
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: space-evenly;
     padding-top: 1rem;
-    padding-left: 1.5rem;
-    
 }
 
-.contact_form_lastName {
-    padding-top: 1rem;
-    /* width: 50%; */
+.contact_form_lastName,
+.contact_form_firstName,
+.contact_form_email,
+.contact_form_message {
+    padding: 1.5rem;
+   
 }
 
-.contact_form_firstName {
-    padding-top: 1rem;
-    /* width: 50%; */
-    
+.contact_form_lastName,
+.contact_form_firstName
+{
+    margin-bottom: 1rem;
 }
 
-.contact_form_email {
-    padding-top: 1rem;
-    padding-left: 9rem;
+.contact_form_label--name{
+    padding-bottom: 1rem;
 }
 
-.contact_form_message{
-    padding-top: 1rem;
-    padding-left: 9rem;
-    
+.contact_form_email label,
+.contact_form_message label {
+    display: block; /* Makes the label a block element */
+    text-align: center; /* Centers the label */
+   
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width of the container */
+    padding: 0.8rem; /* Increased padding inside the input/textarea */
+    font-size: 1.1rem; /* Larger font size for better readability */
+    border: 1px solid #ccc; /* Optional: Adds a border */
+    border-radius: 4px;
+    margin-top: 1rem; /* Optional: Rounds the corners */
 }
 
 .contact_logo {
-    width: 100%;    
+    width: 100%;
 }
 
 .contact_title {
-    margin: 1rem;
-    display: flex;
-    justify-content: center;
+    margin: 1rem auto;
+    text-align: center;
 }
 
 .contact_intro {
     text-align: justify;
-    margin: 0 0rem;
+    margin: 0 auto;
     line-height: 1.7rem;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+/* Submit Button Styles */
 .contact_from_submit {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(204,153,51);
-  text-decoration: none;
-  font-size: 2em;
-  display: inline-block;
-  font-family: Montserrat;
-  text-transform: uppercase;
-  padding: 0.5em 2em;
-  border: 2px solid rgb(204,153,51);
-  transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
-  background: none;
+    color: rgb(204,153,51);
+    font-size: 1em; /* Adjusted font size */
+    padding: 0.5em 1em; /* Adjusted padding */
+    border: 2px solid rgb(204,153,51);
+    background: none;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer; /* Changes cursor to indicate button */
+    display: block; /* Changed to block for natural layout */
+    margin-top: 1rem; /* Space above the button */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+    width: fit-content; /* Adjust width to content */
+    transition: color 0.3s, background-color 0.3s, padding 0.3s; /* Transition for color, background, and padding */
 }
-.contact_from_submit::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 100%;
-  bottom: 0;
-  background: rgb(204,153,51);
-  transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
-  z-index: -1;
-}
+
+.contact_from_submit::before,
 .contact_from_submit::after {
-  content: "";
-  display: inline-block;
-  background-image: url("https://cdn-icons-png.flaticon.com/128/109/109617.png");
-  position: absolute;
-  top: 0;
-  left: calc(100% - 3em);
-  right: 3em;
-  bottom: 0;
-  background-size: 1.5em;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    content: "";
+    display: block;
+    position: absolute;
+    transition: width 0.3s ease; /* Transition for hover effect */
 }
+
+.contact_from_submit::before {
+    top: -2px; /* Positioning */
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: rgba(204, 153, 51, 0);
+    z-index: -1;
+}
+
+.contact_from_submit::after {
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background: white;
+    z-index: -2;
+}
+
 .contact_from_submit:hover {
-  padding: 0.5em 3.5em 0.5em 0.5em;
+    color: white; /* Color change on hover */
+    background-color: rgb(204,153,51); /* Background color change on hover */
 }
+
 .contact_from_submit:hover::before {
-  left: calc(100% - 3em);
-  right: 0;
-  transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
-}
-.contact_from_submit:hover::after {
-  right: 0;
-  transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    width: 100%;
 }
 
+
+/* Responsive Design Adjustments */
 @media screen and (min-width: 320px) {
-   
     .contact_intro {
-        text-align: justify;
         margin: 0 1.3rem;
-        line-height: 1.7rem;}
-
+        line-height: 1.7rem;
+    }
     .contact_title {
         margin: 1rem;
-        display: flex;
         justify-content: center;
     }
 }
 
-
 @media screen and (min-width: 375px) {
- 
     .contact_intro {
-        text-align: justify;
         margin: 0 1.4rem;
-        line-height: 1.7rem;}
+        line-height: 1.7rem;
+    }
 }
-    
 
 @media screen and (min-width: 425px) {
- 
     .contact_intro {
-        text-align: justify;
         margin: 0 2rem;
-        line-height: 1.7rem;}
-
-    
-   
+        line-height: 1.7rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
-    
     .contact_intro {
-        text-align: justify;
         margin: 0 4rem;
-        line-height: 1.7rem;}
-    
-        
-   
+        line-height: 1.7rem;
+    }
 }
 
-@media screen and (min-width: 1024px){
-
+@media screen and (min-width: 1024px) {
     .contact_intro {
-        text-align: justify;
         margin: 0 5rem;
         line-height: 1.7rem;
     }
-
     .contact_title {
         margin: 1rem 6rem;
-        display: flex;
         justify-content: flex-end;
-        font-size: 3.5rem
+        font-size: 3.5rem;
     }
-
     .contact_logo {
         width: 75%;
-        
     }
-    
 }
 
 @media screen and (min-width: 1439px) {
-    
     .contact_title {
         margin: 1rem 9rem;
-        display: flex;
         justify-content: flex-end;
-        font-size: 3.5rem
+        font-size: 3.5rem;
     }
-
     .contact_intro {
-        text-align: justify;
         margin: 0 9rem;
-        line-height: 1.7rem;}
-    
+        line-height: 1.7rem;
+    }
     .contact_logo {
         width: 54%;
-        
     }
-        
-    
 }
 
 @media screen and (min-width: 2559px) {
-    
     .contact_intro {
-        text-align: justify;
         margin: 0 12rem;
-        line-height: 1.7rem;}
-    
+        line-height: 1.7rem;
+    }
     .contact_title {
         margin: 1rem 12rem;
-        display: flex;
         justify-content: flex-end;
-        font-size: 3.5rem
+        font-size: 3.5rem;
     }
-
     .contact_logo {
         width: 50%;
-        
     }
-  
-    
 }
 
- 
+/* Dark and Light Mode Styles */
 .dark {
-	background: rgb(204,153,51);
     background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(204,153,51,1) 100%);
     color: white;
 }
 
 .light {
-	background: rgb(204,153,51);
-	background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(204,153,51,0) 3%, rgba(204,153,51,0) 97%, rgba(204,153,51,1) 100%);
+    background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(204,153,51,0) 3%, rgba(204,153,51,0) 97%, rgba(204,153,51,1) 100%);
 }

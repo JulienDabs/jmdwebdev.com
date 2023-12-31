@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useContext} from "react";
+import { DarkModeContext } from '../DarkMode/DarkModeContext';
 import "../Main/Main.css"; 
 import "../LanguageSelector/LanguageSelector.css"
 import logo from "../../img/JMD Web Dev.png"
@@ -8,9 +9,36 @@ import SCClever from "../../img/clevercontrarian.com.jpg"
 import SCDad from "../../img/pierredabadie.fr.jpg"
 import SCToulon from "../../img/toulonmerite.fr.jpg"
 
+
 function MainPagefr() {
 
-  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.main-page-accomplishements-detail');
+      for (let element of elements) {
+        const position = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (position < windowHeight - 100) {
+          element.classList.add('visible');
+        } else {
+          element.classList.remove('visible');
+        }
+      }
+    };
+
+    // Attach the event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const isDarkMode = useContext(DarkModeContext);
+
+  console.log(isDarkMode)
   const language = localStorage.getItem('language') || 'en';
   const intro = language === 'fr' ? 'Créations | Gestion d\'applications WEB' : "Creations | Web App Management" ;
 
@@ -31,7 +59,7 @@ function MainPagefr() {
   const draft = language === "fr" ? "ébauche" : "draft";
     return (
     <>
-      <div className="main_page ">
+      <div className={`main_page ${isDarkMode ? 'dark' : 'light'}`}>
         
           <img src={isDarkMode ? logoDark : logo} className="animate__animated animate__zoomIn main-page-fr--logo" alt="JMD Developpeur Web"/>
           <h1 className="animate__animated animate__zoomIn main-title">JMD Web Development</h1>
@@ -41,7 +69,7 @@ function MainPagefr() {
             <p>{presentation}</p>
             <br></br><p>{presentationNext}</p>
           </div>
-
+{console.log(isDarkMode)}
           <div className="main-page-accomplishment">
             <h2 id="main-page-second-title">{accomplishments}</h2>
             <ul className="main-page-accomplishments">

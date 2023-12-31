@@ -35,6 +35,7 @@ function ContactForm() {
       //dark mode and language setting
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
     const language = localStorage.getItem('language') || 'en';
+    //content
     const title = language === 'fr' ? "Me contacter" : "Contact Me";
     const lastNameCustomer = language === 'fr' ? "Nom de famille" : "Lastname"; 
     const firstNameCustomer = language === 'fr' ? "Prénom" : "Firstname";
@@ -58,7 +59,7 @@ function ContactForm() {
       <form onSubmit={handleSubmit} >
         <div className="contact_form_names">
           <div className="contact_form_lastName">
-            <label htmlFor="lastName">{lastNameCustomer}:</label><br></br>
+            <label htmlFor="lastName" className="contact_form_label--name">{lastNameCustomer}:</label><br></br>
             <input
               type="text"
               id="name"
@@ -70,7 +71,7 @@ function ContactForm() {
           </div>
 
           <div className="contact_form_firstName">
-            <label htmlFor="firstName">{firstNameCustomer}:</label><br></br>
+            <label htmlFor="firstName" className="contact_form_label--name">{firstNameCustomer}:</label><br></br>
             <input
               type="text"
               id="name"

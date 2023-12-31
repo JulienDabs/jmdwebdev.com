@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import MainPageFr from '../Main/Main';
+import { Route, Routes } from 'react-router-dom';
 import AboutFr from "../About/About";
 import ContactForm from '../Contact/ContactForm';
 import logo from '../../img/JMD Web Dev.png'; 
 import './LanguageSelector.css'
 import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 
 
 
@@ -13,18 +15,18 @@ class LanguageSelector extends Component {
     super(props);
     this.state = {
       language: null,
-      darkMode: false,
+      //darkMode: false,
     };
     this.handleLanguageSelection = this.handleLanguageSelection.bind(this);
-    this.handleDarkModeToggle = this.handleDarkModeToggle.bind(this);
+    // this.handleDarkModeToggle = this.handleDarkModeToggle.bind(this);
   }
 
   componentDidMount() {
     const language = localStorage.getItem('language');
-    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    //const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (language !== null) {
       this.setState({ language: language });
-      this.setState({darkMode: isDarkMode});
+     // this.setState({darkMode: isDarkMode});
     }
   }
 
@@ -34,14 +36,14 @@ class LanguageSelector extends Component {
     this.setState({ language: language });
   }
 
-  handleDarkModeToggle() {
-    const { darkMode } = this.state;
-    localStorage.setItem('darkMode', !darkMode);
-    this.setState ({darkMode: !darkMode});
-  }
+  // handleDarkModeToggle() {
+  //   const { darkMode } = this.state;
+  //   localStorage.setItem('darkMode', !darkMode);
+  //   this.setState ({darkMode: !darkMode});
+  // }
 
   render() {
-    const { language, darkMode } = this.state;
+    const { language } = this.state;
 
     if (language === null) {
       return ( <>
@@ -59,15 +61,26 @@ class LanguageSelector extends Component {
 
     return (
       
-      <div className={darkMode ? 'dark' : 'light'}>
-        <i className={`fa ${darkMode ? 'fa-sun-o' : 'fa-moon-o'}`} id='modes' onClick={this.handleDarkModeToggle}></i>
-        <ContactForm />
-      
+       <div >
+        <Navbar /> 
+        <Main/>             
         <Footer />
       </div>
       
     );
   }
+}
+
+const Main = () => {
+
+  return (
+      <Routes>
+       <Route exact path='/' element={<MainPageFr/>}></Route>
+      <Route exact path='/About' element={<AboutFr/>}></Route>
+      <Route exact path='/Contact' element={<ContactForm/>}></Route>
+      
+      </Routes>
+  )
 }
 
 export default LanguageSelector;
