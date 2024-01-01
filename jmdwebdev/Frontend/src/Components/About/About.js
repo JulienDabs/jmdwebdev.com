@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../img/JMD Web Dev.png"
 import logoDark from "../../img/JMD Web Dev - dark.png"
 import profile from "../../img/profile_pic.jpg"
+import { DarkModeContext } from '../DarkMode/DarkModeContext';
 import './about.css'
+
 
 function AboutFr() {
     
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    const isDarkMode = useContext(DarkModeContext);
+    const dark = isDarkMode.darkMode;
     const language = localStorage.getItem('language') || 'en';
 
     const introText = language === 'fr' ? 'Qui se cache derriere JMD Web Developer ?' : 'Who is behind JMD Web Developer?';
@@ -18,15 +22,16 @@ function AboutFr() {
     return (
        
         <>
-        
-        <div className="about-intro">
-            <img src={isDarkMode ? logoDark : logo} className="about-logo" alt="JMD WebDevelopment" />
-            <h1 className="about-title">{introText}</h1>
-        </div>
-        <div className="about-biopic">
-            <p className="about-bio">{bioText}</p>
-            
-            <img src={profile} className="about-picture-profile" alt="Julien Dabadie Developpeur WEB"/>
+        <div className={`about ${dark ? 'dark' : 'light'}`}>
+            <div className="about-intro">
+                <img src={dark ? logoDark : logo} className="about-logo" alt="JMD WebDevelopment" />
+                <h1 className="about-title">{introText}</h1>
+            </div>
+            <div className="about-biopic">
+                <p className="about-bio">{bioText}</p>
+                
+                <img src={profile} className="about-picture-profile" alt="Julien Dabadie Developpeur WEB"/>
+            </div>
         </div>
         </>
     )

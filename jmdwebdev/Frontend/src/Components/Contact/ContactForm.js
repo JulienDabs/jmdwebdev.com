@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import logo from "../../img/JMD Web Dev.png"
 import logoDark from "../../img/JMD Web Dev - dark.png"
 import "../Contact/ContactForm.css"
 import "../LanguageSelector/LanguageSelector.css"
+import { DarkModeContext } from '../DarkMode/DarkModeContext';
 
 
 function ContactForm() {
+
+
   const [lastName, setLastname] = useState("");
   const [firstName, setFirstname] = useState("");
   const [email, setEmail] = useState("");
@@ -33,7 +36,8 @@ function ContactForm() {
   
   };
       //dark mode and language setting
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      const isDarkMode = useContext(DarkModeContext);
+      const dark = isDarkMode.darkMode;
     const language = localStorage.getItem('language') || 'en';
     //content
     const title = language === 'fr' ? "Me contacter" : "Contact Me";
@@ -47,69 +51,72 @@ function ContactForm() {
   return (
 
     <>
-    <img src={isDarkMode ? logoDark : logo} className="animate__animated animate__zoomIn contact_logo" alt="JMD Developpeur Web"/>
-          <h1 className="animate__animated animate__zoomIn main-title">JMD Web Development</h1>
 
-          <h2 className="contact_title">{title}</h2><br></br>
+    <div className={`${dark ? 'dark' : 'light'}`}>
+      <img src={dark ? logoDark : logo} className="animate__animated animate__zoomIn contact_logo" alt="JMD Developpeur Web"/>
+            <h1 className="animate__animated animate__zoomIn main-title">JMD Web Development</h1>
 
-          <p className="contact_intro">{intro}</p>
-    
-    
-    <div className="contact_form">
-      <form onSubmit={handleSubmit} >
-        <div className="contact_form_names">
-          <div className="contact_form_lastName">
-            <label htmlFor="lastName" className="contact_form_label--name">{lastNameCustomer}:</label><br></br>
+            <h2 className="contact_title">{title}</h2><br></br>
+
+            <p className="contact_intro">{intro}</p>
+      
+      
+      <div className="contact_form">
+        <form onSubmit={handleSubmit} >
+          <div className="contact_form_names">
+            <div className="contact_form_lastName">
+              <label htmlFor="lastName" className="contact_form_label--name">{lastNameCustomer}:</label><br></br>
+              <input
+                type="text"
+                id="name"
+                value={lastName}
+                placeholder="Doe"
+                onChange={(e) => setLastname(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="contact_form_firstName">
+              <label htmlFor="firstName" className="contact_form_label--name">{firstNameCustomer}:</label><br></br>
+              <input
+                type="text"
+                id="name"
+                value={firstName}
+                placeholder="John"
+                onChange={(e) => setFirstname(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="contact_form_email">
+            <label htmlFor="email">{mail}:</label><br></br>
             <input
-              type="text"
-              id="name"
-              value={lastName}
-              placeholder="Doe"
-              onChange={(e) => setLastname(e.target.value)}
+              type="email"
+              id="email"
+              placeholder="john.doe@host.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
 
-          <div className="contact_form_firstName">
-            <label htmlFor="firstName" className="contact_form_label--name">{firstNameCustomer}:</label><br></br>
-            <input
-              type="text"
-              id="name"
-              value={firstName}
-              placeholder="John"
-              onChange={(e) => setFirstname(e.target.value)}
+          <div className="contact_form_message">
+            <label htmlFor="message">Message:</label><br></br>
+            <textarea
+              id="message"
+              value={message}
+              placeholder={placeholderMessage}
+              rows="20"
+              cols="64"
+              onChange={(e) => setMessage(e.target.value)}
               required
-            />
+            ></textarea>
           </div>
-        </div>
 
-        <div className="contact_form_email">
-          <label htmlFor="email">{mail}:</label><br></br>
-          <input
-            type="email"
-            id="email"
-            placeholder="john.doe@host.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-
-        <div className="contact_form_message">
-          <label htmlFor="message">Message:</label><br></br>
-          <textarea
-            id="message"
-            value={message}
-            placeholder={placeholderMessage}
-            rows="20"
-            cols="64"
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit" className="contact_from_submit">{submit}</button>
-      </form>
+          <button type="submit" className="contact_from_submit">{submit}</button>
+        </form>
+      </div>
     </div>
     </>
   );

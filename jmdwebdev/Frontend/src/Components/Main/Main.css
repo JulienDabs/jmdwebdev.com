@@ -72,7 +72,7 @@ p {
 }
 
 .main-page-accomplishements-detail.visible {
-    animation: fadeInZoom 1.5s forwards ease-in-out;
+    animation: fadeInZoom 1.0s forwards ease-in-out;
 }
 
 @keyframes fadeInZoom {
@@ -101,25 +101,14 @@ p {
     padding: 1.5rem 0;
 }
 
-/* Accomplishment Section Margin */
-.main-page-accomplishment {
-    margin: 1rem 0;
-}
 
-/* Dark and Light Mode Styles */
-.dark {
-    background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, rgba(204,153,51,1) 100%);
-    color: white;
-}
 
-.light {
-    background: linear-gradient(90deg, rgba(204,153,51,1) 0%, rgba(204,153,51,0) 3%, rgba(204,153,51,0) 97%, rgba(204,153,51,1) 100%);
-}
 
 /* Media Queries for Responsive Design */
 @media screen and (min-width: 320px) {
     .main_page {
-        margin: 20px;
+        /* margin: 20px; */
+        width: 85%;
     }
 
     .main-page-fr--logo {
@@ -133,14 +122,14 @@ p {
     }
 
     .main-page-accomplishements-detail {
-        width: 80%;
+        width: 78%;
         margin-bottom: 4rem;
     }
 }
 
 @media screen and (min-width: 768px) {
     .main_page {
-        margin: 10px 60px;
+        margin: 0px 60px;
     }
 
     .main-page-fr--logo {
@@ -165,7 +154,7 @@ p {
 
 @media screen and (min-width: 1140px) {
     .main_page {
-        margin: 10px 120px;
+        margin: 0px 120px;
     }
 
     .main-page-fr--logo {

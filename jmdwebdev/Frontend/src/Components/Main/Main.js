@@ -37,8 +37,9 @@ function MainPagefr() {
   }, []);
 
   const isDarkMode = useContext(DarkModeContext);
+  const dark = isDarkMode.darkMode;
 
-  console.log(isDarkMode)
+
   const language = localStorage.getItem('language') || 'en';
   const intro = language === 'fr' ? 'Créations | Gestion d\'applications WEB' : "Creations | Web App Management" ;
 
@@ -59,9 +60,10 @@ function MainPagefr() {
   const draft = language === "fr" ? "ébauche" : "draft";
     return (
     <>
-      <div className={`main_page ${isDarkMode ? 'dark' : 'light'}`}>
+      <div className={`${dark ? 'dark' : 'light'}`}>
+        <div className="main_page">
         
-          <img src={isDarkMode ? logoDark : logo} className="animate__animated animate__zoomIn main-page-fr--logo" alt="JMD Developpeur Web"/>
+          <img src={dark ? logoDark : logo} className="animate__animated animate__zoomIn main-page-fr--logo" alt="JMD Developpeur Web"/>
           <h1 className="animate__animated animate__zoomIn main-title">JMD Web Development</h1>
           <h2 className="maintitle">{intro}</h2><br></br>
         
@@ -81,7 +83,7 @@ function MainPagefr() {
 
               <li className="main-page-accomplishements-detail"><h4>Toulon Mérite un Grand Sporting ({draft})</h4><a href="https://www.jmdwebdev.com/toulonmerite"><img className="main-page-thumbnail" src={SCToulon} alt="Toulon Mérite un grand Sporting" loading="lazy" lazy="true"/></a><p>{toulonmeritePres}</p></li>
             </ul>
-          </div>
+          </div></div>
       </div>
       
     </>
