@@ -1,3 +1,25 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt generated for https://www.jmdwebdev.com
 User-agent: *
-Disallow:
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemap: specify the path to your sitemap.xml
+Sitemap: https://www.jmdwebdev.com/sitemap.xml
+
+# Allow all agents to crawl the main areas
+User-agent: *
+Allow: /
+
+# Additional settings for other bots
+User-agent: Googlebot
+Allow: /
+Disallow: /nogooglebot/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /nobingbot/
+
+# Delay between successive requests - reduces load on your server
+Crawl-delay: 10  # This line is a directive for crawlers to wait 10 seconds between hits

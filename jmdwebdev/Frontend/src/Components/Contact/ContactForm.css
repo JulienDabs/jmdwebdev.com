@@ -62,6 +62,17 @@ textarea {
     line-height: 1.7rem;
 }
 
+.contact_form_capchat {
+    font-size: 1em; /* Adjusted font size */
+    padding: 0.5em 1em; /* Adjusted padding */
+    display: block; /* Changed to block for natural layout */
+    margin-top: 1rem; /* Space above the button */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+    width: fit-content; /* Adjust width to content */
+   
+}
+
 /* Submit Button Styles */
 .contact_from_submit {
     color: rgb(204,153,51);

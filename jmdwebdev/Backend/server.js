@@ -1,43 +1,29 @@
-const dotenv = require("dotenv").config();
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-const sendEmail = require("./utils/sendEmail");
+const sendEmail = require("./utils/sendEmail"); // import your sendEmail function
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: "https://jmdwebdev.com" }));
+app.use(express.json()); // Middleware to parse JSON bodies
 
-// Route
-app.get("/", (req, res) => {
-  res.send("Home Page");
-});
+// Your email sending route will be added here later.
 
-app.post("/api/sendemail", async (req, res) => {
-  const { email } = req.body;
+app.post("/send-email", async (req, res) => {
+  const { subject, message, send_to, sent_from, reply_to } = req.body;
 
   try {
-    const send_to = "contact@jmdwebdev.com";
-    const sent_from = process.env.EMAIL_USER;
-    const reply_to = "contact@jmdwebdev.com";
-    const subject = "Thank You Message From NodeCourse";
-    const message = `
-        <h3>Hello Zino</h3>
-        <p>Thank for your YouTube Tutorials</p>
-        <p>Regards...</p>
-    `;
-
     await sendEmail(subject, message, send_to, sent_from, reply_to);
-    res.status(200).json({ success: true, message: "Email Sent" });
+    res.status(200).json({ message: "Email sent successfully!!!" });
   } catch (error) {
-    res.status(500).json(error.message);
+    console.error(error);
+    res
+      .status(500)
+      .json({ message: "Failed to send email", error: error.message });
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}...`);
-});
+app.listen(PORT);
