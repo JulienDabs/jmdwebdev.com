@@ -26,7 +26,7 @@ function ContactForm() {
       toast.error(nom);
       return;
     }
-  
+
     if (!email.match(/^\S+@\S+\.\S+$/)) {
       toast.error(emailErr);
       return;
@@ -41,7 +41,8 @@ function ContactForm() {
     };
 
     // Send the email
-    fetch("https://mail.jmdwebdev.com/send-email", {
+    fetch("https://mail.jmdwebdev.com/", {
+      mode: "cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +76,6 @@ function ContactForm() {
     setMessage("");
 
     // Display a success message or perform any desired action
-   
   };
   //dark mode and language setting
   const isDarkMode = useContext(DarkModeContext);
@@ -104,9 +104,10 @@ function ContactForm() {
       ? "La demande n'a pas pu aboutir, merci de réessayer."
       : "Your request cannot be completed, please try again.";
 
-  const prenom = language === "fr" ? "prénom requis" : "First Name Required"
-  const nom = language === "fr" ? "nom de famille requis" : "Lastname Name Required"
-  const emailErr = language === "fr" ? "courriel invalide" : "Invalid Email"
+  const prenom = language === "fr" ? "prénom requis" : "First Name Required";
+  const nom =
+    language === "fr" ? "nom de famille requis" : "Lastname Name Required";
+  const emailErr = language === "fr" ? "courriel invalide" : "Invalid Email";
 
   return (
     <>
@@ -180,13 +181,16 @@ function ContactForm() {
                 value={message}
                 placeholder={placeholderMessage}
                 rows="20"
-                cols="64"
+                cols="100"
                 onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
             </div>
 
-            <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} className="contact_form_capchat"/>
+            <ReCAPTCHA
+              sitekey={process.env.REACT_APP_SITE_KEY}
+              className="contact_form_capchat"
+            />
             <button type="submit" className="contact_from_submit">
               {submit}
             </button>
