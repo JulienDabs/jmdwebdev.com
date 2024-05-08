@@ -52,8 +52,8 @@ function MainPagefr() {
 
   const presentationNext =
     language === "fr"
-      ? "Vous trouverez dans les pages 'projets' tous les projets réalisé avec à partir de different languages"
-      : "In 'Projects' pages you will find all projects realised with different programming languages";
+      ? "Ci dessous vous retrouverez tous les projets réalisé avec à partir de different languages"
+      : "Down below you will find all projects realised with different programming languages";
 
   const carolinedabadiePres =
     language === "fr"
